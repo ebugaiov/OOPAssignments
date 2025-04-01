@@ -6,7 +6,7 @@ public class Sale
     public double Price { get; set; }
     public Employee Seller { get; set; }
     public Customer Client { get; set; }
-    public DateTime TransactionDate { get; set; }
+    public DateTime TransactionDate { get; private set; }
 
     public Sale(string product, double price, Employee seller, Customer client)
     {
@@ -19,7 +19,7 @@ public class Sale
         AddSaleToLists();
     }
 
-    public void AddSaleToLists()
+    private void AddSaleToLists()
     {
         Seller.SalesList.Add(this);
         Client.PurchasesList.Add(this);

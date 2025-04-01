@@ -2,7 +2,6 @@
 
 class Program
 {
-
     public static void PrintPerson(Person person)
     {
         Console.WriteLine(person);
@@ -32,5 +31,9 @@ class Program
 
         employee1.PrintSalesStatistic();
         employee1.PrintSalesList();
+        
+        // Customers Statistic and Purchases List 
+        customer1.PrintPurchasesStatistic();
+        customer1.PrintPurchasesList();
     }
 }

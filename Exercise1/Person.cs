@@ -7,7 +7,7 @@ public class Person
     public int Age { get; set; }
     private static int InstanceCount { get; set; } = 0;
 
-    public Person()
+    private Person()
     {
         IncreaseInstanceCount();
     }

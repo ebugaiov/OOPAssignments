@@ -3,7 +3,7 @@
 public class Employee : Person
 {
     public double Salary { get; set; }
-    public List<Sale> SalesList { get; set; } = new();
+    public List<Sale> SalesList { get; } = new();
 
     public Employee(
         string firstName, string lastName, int age, double salary
@@ -14,14 +14,15 @@ public class Employee : Person
 
     public override string ToString() => $"Employee: {FirstName} {LastName}";
 
-    private int GetNumberOfSales() => SalesList?.Count ?? 0;
+    private int GetNumberOfSales() => SalesList.Count;
 
     private double GetSalesTotal()
     {
         double total = 0;
-        if (SalesList is not null)
-            foreach (var item in SalesList)
-                total += item.Price;
+        
+        foreach (var item in SalesList)
+            total += item.Price;
+        
         return total;
     }
 
@@ -37,10 +38,10 @@ public class Employee : Person
         );
     }
 
-    private static void PrintSaleItem(Sale item)
+    private static void PrintSaleItem(Sale sale)
     {
         Console.WriteLine(
-            $"Product: {item.Product, -10} Price: ${item.Price, -9} Buyer: {item.Client.GetFullName()}"
+            $"Product: {sale.Product, -10} Price: ${sale.Price, -9} Buyer: {sale.Client.GetFullName()}"
         );
     }
 
