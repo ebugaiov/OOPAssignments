@@ -4,8 +4,8 @@ public interface IDriveable
 {
     // Properties
     public string Name { get; }
-    public int VehicleSpeed { get; }
-    public int RemainingFuel { get; }
+    public int VehicleSpeed { get; set; }
+    public int RemainingFuel { get; set; }
     // Methods
     public void StartEngine();
     public void StopEngine();

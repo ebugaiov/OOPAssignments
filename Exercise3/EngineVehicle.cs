@@ -6,8 +6,8 @@ public abstract class EngineVehicle
     private int _fuel;
     
     public string Name { get; set; }
-    public int VehicleSpeed { get; protected set; } = 0;
-    public int RemainingFuel { get; protected set; }
+    public int VehicleSpeed { get; set; } = 0;
+    public int RemainingFuel { get; set; }
 
     public virtual int Speed
     {

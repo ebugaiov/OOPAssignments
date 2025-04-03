@@ -4,7 +4,9 @@ public class Motorbike : EngineVehicle,  IDriveable
 {
     // Const
     private const int MaxSpeed = 160;
+    private const int SpeedStep = 80;
     private const int TankVolume = 40;
+    private const int FuelStep = 5;
     private const int MinVolumeOfFuel = 5;
 
     #region Properties
@@ -58,14 +60,14 @@ public class Motorbike : EngineVehicle,  IDriveable
     public void Gas()
     {
         Console.WriteLine($"Pressing Gas.");
-        Fuel -= 5;
-        Speed += 100;
+        Fuel -= FuelStep;
+        Speed += SpeedStep;
     }
 
     public void Break()
     {
         Console.WriteLine($"Pressing Break.");
-        Speed -= 100;
+        Speed -= SpeedStep;
     }
 
     public void TurnLeft()

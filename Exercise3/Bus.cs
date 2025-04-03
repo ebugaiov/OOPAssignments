@@ -4,7 +4,9 @@ public class Bus : EngineVehicle, IDriveable
 {
     // Const
     private const int MaxSpeed = 120;
+    private const int SpeedStep = 30;
     private const int TankVolume = 150;
+    private const int FuelStep = 15;
     private const int MinVolumeOfFuel = 20;
 
     #region Properties
@@ -58,14 +60,14 @@ public class Bus : EngineVehicle, IDriveable
     public void Gas()
     {
         Console.WriteLine($"Pressing Gas.");
-        Fuel -= 15;
-        Speed += 30;
+        Fuel -= FuelStep;
+        Speed += SpeedStep;
     }
 
     public void Break()
     {
         Console.WriteLine($"Pressing Break.");
-        Speed -= 30;
+        Speed -= SpeedStep;
     }
 
     public void TurnLeft()
